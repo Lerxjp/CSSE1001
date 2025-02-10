@@ -355,7 +355,6 @@ class AllNighterCard(Card):
         
         return str(self)
 
-
         
 class Deck(object):
     """
@@ -370,9 +369,11 @@ class Deck(object):
                 starting_cards (None): constructs the deck with an empty list Deck()
         """
         
-        self._cards = starting_cards
         if self._cards is None:
             self._cards = []
+        self._cards = starting_cards
+
+
     def get_cards(self):
         """
         returns:
@@ -381,6 +382,7 @@ class Deck(object):
         
         return self._cards
     
+
     def get_card(self, slot):
         """
         returns:
@@ -389,6 +391,7 @@ class Deck(object):
         
         return self._cards[slot]
     
+
     def top(self):
         """
         returns:
@@ -397,6 +400,7 @@ class Deck(object):
         
         return self._cards[-1]
     
+
     def remove_card(self, slot):
         """
         Removes a card from the given slot in a deck.
@@ -404,6 +408,7 @@ class Deck(object):
         
         self._cards.pop(slot)
     
+
     def get_amount(self):
         """
         get_amount(self) -> int: Returns the amount of cards in a deck.
@@ -411,6 +416,7 @@ class Deck(object):
         
         return len(self._cards)
     
+
     def shuffle(self):
         """
         shuffle(self): Shuffles the order of the cards in the deck.
@@ -418,6 +424,7 @@ class Deck(object):
         
         random.shuffle(self._cards)
     
+
     def pick(self, amount: int= 1):
         """
         pick(self, amount: int=1) -> List[Card]: Takes the first 'amount' of cards off the deck and returns them.
