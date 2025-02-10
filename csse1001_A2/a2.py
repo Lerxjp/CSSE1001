@@ -425,13 +425,13 @@ class Deck(object):
         
         number = 0
         #creates a blank list
-        Pick_list = []
+        card_List = []
         while number < amount:
             number += 1
             #Adds card to the empty list
-            Pick_list.append(self.top())
+            card_List.append(self.top())
             self.remove_card(-1)
-        return Pick_list
+        return card_List
             
 
     def add_card(self, card):
@@ -440,7 +440,7 @@ class Deck(object):
                 add_card(self, card: Card): Places a card on top of the deck.
         """
         
-        self._cards.extend([card])
+        self._cards.append([card])
     
     def add_cards(self, cards):
         """
@@ -455,7 +455,7 @@ class Deck(object):
         extending the list of cards of the current deck.
         """
 
-        return self.get_cards().extend(other_deck.get_cards())
+        return self.add_cards(other_deck.get_cards())
     
     def __str__(self):
         """
@@ -523,19 +523,16 @@ class Player(object):
             True
             False
         """
-        
-        if self._coders.get_amount() >= 4:
-            return True
-        else:
-            return False
-        
-        pass
+
+        return self._coders.get_amount() >= 4
+
+
     def __str__(self):
         """
         _str__(self) -> str: Returns the string representation of the NumberCard(number)
         """
         
-        return f"Player({self._name}, {self._deck}, {self._coders})"
+        return f"Player({self.get_name()}, {self.get_hand()}, {self.get_coders()})"
 
     def __repr__(self):
         """
