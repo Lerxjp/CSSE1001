@@ -1,3 +1,3 @@
-CSSE1001 UQ sem 2 2019 course repository for Jean-Pierre Le Roux
+CSSE1001 UQ sem 2 2019 course repository
 
 This is a repository to track and document the course work for csse1001
